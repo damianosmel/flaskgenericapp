@@ -6,6 +6,7 @@ import configparser
 from waitress import serve
 from flask import Flask, render_template, url_for,redirect,request
 from routes import render_home, render_faq
+from os.path import join
 
 app = Flask(__name__)
 
@@ -31,6 +32,7 @@ def initial():
 if __name__ == '__main__':
     config = configparser.ConfigParser()
     config.read('settings.ini')
-    logging.basicConfig(filename='mywebapp.log', level=logging.DEBUG)
+    general_path = "/home/damian/Documents/L3S/projects/learning_web"
+    logging.basicConfig(filename=join(general_path,'genotoscope_website.log'), level=logging.DEBUG)
     app.secret_key = config["APP_INFO"]["secret_key"]
     serve(app, host='127.0.0.1', port=5000)
