@@ -5,15 +5,16 @@ import logging
 from email_stuff import send_email,make_email_content
 from flask import render_template
 
-
+'''
 AVAILABLE_FORM_ELEMENTS_DICT = {"upload_input" : ["name","label"],
                                 "email_input" : ["name","label"],
                                 "password_input" : ["name","label"],
                                 "confirm_checkbox" : ["name","message","warning"],
-                                "shottext_input" : ["name","label"],
+                                "shorttext_input" : ["name","label"],
                                 "radio_buttons_input" : ["radio_title","radios"]
                                 }
-
+'''
+AVAILABLE_FORM_ELEMENTS_DICT = {"shorttext_input": ["name","label"],"email_input": ["name", "label"]}
 
 def generate_form_page(session="testing_session"):
     config = configparser.ConfigParser()
@@ -43,6 +44,7 @@ def process_posted_form(request):
     config = configparser.ConfigParser()
     config.read('settings.ini')
     if request.form:
+        print("Hello world!")
         # _# check if there is a file
         if "up_file" in request.files:
             uploaded_file = request.files['up_file']
