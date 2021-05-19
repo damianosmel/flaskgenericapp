@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ navbar|safe }}
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation</title>
+    <style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+</head>
+
+<div class="container-lg">
+    <div class="container" style="background-color : {{ element_color }}; padding : 40px">
+        <div class="container" style="padding=15px;">
+            {{ documentation_content|safe }}
+            <h1>Documentation</h1>
+
+            <h2>How GenOtoScope works?</h2>
+
+            <p>
+                Predict genomic variant pathogenicity for congenital hearing loss following ACMG ..
+            </p>
+
+            <h2>Input Data</h2>
+
+            <p>
+                The user needs to type in a single genomic variant for pathogenicity prediction.
+                What is the input format?
+                Example input
+                ..
+            </p>
+
+            <h2>Output Data</h2>
+
+            <p>
+                GenOtoScope will annotate the variant using open bioinformatic databases and tools and will predict its
+                ACMG pathogenicity class and posterior probability. Also comments for each examined ACMG rule will be
+                provided to help user jugde the prediction. ..
+            </p>
+
+            <h2>Predict hearing-loss pathogenicity for whole exome file?</h2>
+
+            <p>
+                For data protection reasons, we allow online users to classify only one genomic variant using
+                GenOtoscope.
+                If you would like to annotate a whole exome sequencing file (WES) please install and run the command
+                line version of the tool.
+            </p>
+
+            <h2> Annotation source and tool versions </h2>
+            <p>
+                Current annotation database versions:
+                <table>
+                <tr>
+                    <th>Database</th>
+                    <th>Version</th>
+                </tr>
+                <tr>
+                    <th>Ensembl</th>
+                    <th>75 (GRCh37/hg19)</th>
+                </tr>
+                <tr>
+                    <th>ClinVar</th>
+                    <th>v. Mar 2021</th>
+                </tr>
+                <tr>
+                    <th>UniProt</th>
+                    <th>v. Feb 2021</th>
+                </tr>
+                <tr>
+                    <th>gnomAD</th>
+                    <th>v2.1</th>
+                </tr>
+                </table>
+            </p>
+            <p>
+                Here explain for annotation tools
+            </p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</html>
